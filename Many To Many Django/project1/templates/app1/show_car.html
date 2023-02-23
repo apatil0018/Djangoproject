@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>SHOW COURSES</title>
+{% endblock %}
+{% block content %}
+<body>
+    <table>
+        <thead>
+            <th> ID</th>
+            <th>CID</th>
+            <th>YEAR</th>
+            <th>BRAND</th>
+            <th>MODEL NAME</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        <thead>
+            {% for i in obj %} 
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cid}}</td>
+                <td>{{i.year}}</td>
+                <td>{{i.brand}}</td>
+                <td>{{i.model_name}}</td>
+                <td><button class="btn btn-warning"><a href="{% url 'updatecar_url' i.id %}">UPDATE</a></button></td>
+                <td><button class="btn btn-danger"><a href="{% url 'del_url' i.id %}">DELETE</a></button></td>
+
+            </tr>
+            {% endfor %}     
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>SHOW OWNER</title>
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+    <table>
+        <thead>
+            <th>OWNER ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th> UPDATE</th>
+            <th>DELETE</th>
+        </thead>
+
+    </table>
+    <tr>
+        {% for  i in obj %}
+        <td>{{i.oid}}</td>
+        <td>{{i.fname}}</td>
+        <td>{{i.lname}}</td>
+        <td><button class="btn btn-warning"><a href="{% url 'updateown_url' i.oid %}">UPDATE</a></button></td>
+        <td><button class="btn btn-danger"><a href="{% url 'delete_own_url' i.oid %}">DELETE</a></button></td>
+
+        
+    </tr>
+    {% endfor %}
+
+
+    {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW STUDENT FORM</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>ROLL</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>CITY</th>
+
+        </thead>
+        <tbody>
+            {% for i in obj %}
+            <tr>
+                <td>{{i.rn}}</td>
+                <td>{{i.fname}}</td>
+                <td>{{i.lname}}</td>
+                <td>{{i.city}}</td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <button><a href="{% url 'courseformurl' %}">COURSE FORM</a></button>
+    <button><a href="{% url 'studentformurl' %}">STUDENT FORM</a></button>
+    <button><a href="{% url 'coursedataurl' %}">SHOW COURSES</a></button>
+    
+
+    
+
+
+
+
+    
+</body>
+</html>

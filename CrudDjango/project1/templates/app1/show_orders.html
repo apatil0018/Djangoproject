@@ -1,0 +1,44 @@
+
+{% extends 'layout.html' %}
+
+
+    {% block title %}
+    <title>SHOW ORDER</title>
+    {% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>ORDER ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>AMOUNT</th>
+                <th>EMAIL</th>
+                <th>ADDRESS</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+       <tbody style="background-color: white;">
+        {% for i in obj %}
+        <tr>
+            <th>{{i.o_id}}</th>
+            <th>{{i.f_name}}</th>
+            <th>{{i.l_name}}</th>
+            <th>{{i.amt}}</th>
+            <th>{{i.mail}}</th>
+            <th>{{i.address}}</th>
+            <td><button class="btn btn-warning"><a href="{% url 'updateorder_url' i.o_id %}">UPDATE</a></button></td>
+            <td><button class="btn btn-danger"><a href="{% url 'deleteorder_url' i.o_id %}">DELETE</a></button></td>
+        
+        </tr> 
+        {% endfor %}  
+       </tbody> 
+    </table>
+
+</div>
+    {% endblock %}
+
+    
